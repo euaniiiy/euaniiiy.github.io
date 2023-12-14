@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>killer page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            overflow-y: scroll;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            font-style: italic;
+            margin: 20px 0;
+        }
+
+        p {
+            text-align: center;
+            line-height: 1.6;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+            box-sizing: border-box;
+        }
+
+        .gallery-container img {
+            width: 150px;
+            height: auto;
+            margin: 10px;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .gallery-container img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+
+        #image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+        }
+
+        #displayed-image {
+            max-width: 100%;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        #image-description {
+            text-align: left;
+        }
+
+        #header {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        #footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #footer p {
+            margin: 0;
+            display: inline-block;
+        }
+
+        #date-time-widget {
+            font-size: 1.2em;
+        }
+
+        #changing-text {
+            color: white; 
+            display: inline-block;
+        }
+
+        @keyframes colorChange {
+            0% { color: white; }
+            50% { color: red; }
+            100% { color: white; }
+        }
+
+        /* 텍스트에 애니메이션 적용 */
+        #changing-text.active {
+            animation: colorChange 5s linear infinite; /* 5초 동안 선형으로 반복되는 애니메이션 적용 */
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <a href="last.html">Back to main page</a>
+        <h2 id="date-time-widget"></h2>
+    </div>
+    <h1>난 혼자가 아니다.</h1>
+    
+    <p>
+        <span id="changing-text" class="active">
+            이 존재들은 그때그때 다른 듯하다. <br> <br>
+            하지만 각자 비슷한 방식으로 행동하며, 인간과 흡사한 신체적 특징을 보인다. 그러나 가끔씩 희미한 인간성의 흔적을 찾을 수 있음에도 불구하고 그들은 되려 짐을 옮기는 짐승에 더 가까워 보인다. 그들의 피부와 몸에는 흉터와 상처자국이 있고. 마치 스스로 변형된 듯한 것으로 보인다. 또한 죽은 것처럼 보인다. 그들에게선 조금의 인간성도 볼 수가 없다. 그들은 날 찾으려 몸을 숙였다. 하지만 가끔씩 날 죽이는 걸 주저했다. 대신 난 공포스러운 갈고리들 중 하나에 걸렸다. 나 자신에게 스스로 왜 그들 스스로 내 목숨을 끊지 않는지에 대해 물었다. 그러나 누군가가 그들을 통제하는 것이 분명했다. 어쩌면 그들은 누군가의 명령을 따르는 것일지도.<br><br>
+            난 그들이 날 추격함과 동시에 그들을 이해해보려고 했다. 그들의 목적을 찾아낼 수 있는 무언가를 찾아보려 시도했다. 그들은 벌을 받는건가? 하지만 이 경우, 나도 같은 처지에 있는건가? 누군가를 벌 줄 때, 나는 탈출을 시도하고 여기에서 나간다. <br><br>
+            그들은 그들의 역할을 하고 있고. 그들은 어떠한 목적지도 없이, 살아있는 어떠한 영혼이라도 찾기 위해 설치된 기계같았다. 그들에겐 바라는게 없을까? 누굴 섬기는 걸까? 그게 주인이라도 되는 걸까? 난 그들이 쉬거나 멈추는 모습을 결코 본 적이 없다. 그들은 갈고리가 사용되기 전까지 사냥을 계속했다. 그렇지만 그 후
+        </span>
+    </p>
+
+    <div class="gallery-container">
+        <img src="C:\Users\Vitamin-Lenovo\Desktop\UAN\허유안\web 2hakgi\uanheoeuan.github.io\euaniiiy.github.io\nurse.PNG" alt="Image 1" onclick="showImage('nursecalling.png', '이 기술을 사용하는 살인마는 본인 기준 범위 24 미터 안에서 치료 중인 생존자의 위치가 보인다.')">
+        <img src="C:\Users\Vitamin-Lenovo\Desktop\UAN\허유안\web 2hakgi\uanheoeuan.github.io\euaniiiy.github.io\ghostface.PNG" alt="Image 2" onclick="showImage('jeonyulgibbeum.png', '살인마에게 공격당하면 부상 상태에 빠지는데, 부상 상태에서의 속도가 3% 더 빨라진다.')">
+        <img src="C:\Users\Vitamin-Lenovo\Desktop\UAN\허유안\web 2hakgi\uanheoeuan.github.io\euaniiiy.github.io\demogorgon.PNG" alt="Image 3" onclick="showImage('mindbreaker.png', '공포 속에서 위안을 주는 호재. 맵 내에 있는 토템이라는 아이템과 상호작용하여 아군의 치유 속도를 기본 속도보다 100% 빠르게 만든다')">
+    </div>
+
+    <div id="image-container">
+        <img id="displayed-image">
+        <div id="image-description"></div>
+    </div>
+
+    <div id="footer">
+        <p>It's euaniiiy's Web Publicng final page / my instagram: @imdbdks</p>
+    </div>
+
+    <script>
+        function showImage(imageName, description) {
+            var imageDescription = document.getElementById("image-description");
+            var displayedImage = document.getElementById("displayed-image");
+
+            imageDescription.innerHTML = description;
+            displayedImage.src = imageName;
+
+            imageDescription.style.display = "block";
+            displayedImage.style.display = "block";
+        }
+
+        function updateDateTimeWidget() {
+            var dateTimeWidget = document.getElementById("date-time-widget");
+            var now = new Date();
+            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+            var formattedDate = now.toLocaleDateString('ko-KR', options);
+            dateTimeWidget.innerText = formattedDate;
+        }
+        setInterval(updateDateTimeWidget, 1000);
+
+        updateDateTimeWidget();
+    </script>
+</body>
+</html>

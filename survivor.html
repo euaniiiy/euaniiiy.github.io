@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>survivor page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            overflow-y: scroll;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            font-style: italic;
+            margin: 20px 0;
+        }
+
+        p {
+            text-align: center;
+            line-height: 1.6;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+            box-sizing: border-box;
+        }
+
+        .gallery-container img {
+            width: 150px;
+            height: auto;
+            margin: 10px;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .gallery-container img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+
+        #image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+        }
+
+        #displayed-image {
+            max-width: 100%;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        #image-description {
+            text-align: left;
+        }
+
+        /* Header Styles */
+        #header {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        #header a {
+            color: white; /* 링크 색상 지정 */
+            text-decoration: none; /* 링크 밑줄 제거 */
+        }
+
+        #header a:hover {
+            text-decoration: underline; /* 호버 상태에서 밑줄 추가 */
+        }
+
+        /* Footer Styles */
+        #footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #footer p {
+            margin: 0;
+            display: inline-block; /* 가운데 정렬을 위한 추가 스타일 */
+        }
+
+        #date-time-widget {
+            font-size: 1.2em; /* 조절 가능한 크기 */
+        }
+
+        #changing-text {
+            color: white; /* 텍스트의 색상을 흰색으로 지정 */
+            display: inline-block; /* 각 글자를 개별 요소로 취급 */
+        }
+
+        /* 텍스트 색상 변경 애니메이션 */
+        @keyframes colorChange {
+            0% { color: white; }
+            50% { color: red; }
+            100% { color: white; }
+        }
+
+        /* 텍스트에 애니메이션 적용 */
+        #changing-text.active {
+            animation: colorChange 5s linear infinite; /* 5초 동안 선형으로 반복되는 애니메이션 적용 */
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <a href="last.html">Back to main page</a>
+        <h2 id="date-time-widget"></h2>
+    </div>
+
+    <h1>난 혼자가 아니다.</h1>
+    
+    <p>
+        <!-- 클래스를 추가하여 애니메이션을 시작할 수 있도록 함 -->
+        <span id="changing-text" class="active">
+            당신이 살인마들의 편에 선 게 아니라면 말이다. 난 다른 이들을 찾았다. 생존자들은 나랑 같았다. 혹은 적어도 내가 생각하기에는, 그렇게 믿고 싶었다. 때때로 난 넋을 잃은 것 같은 불쌍한 영혼을 얼핏 본 적이 있었다. 난 다른 이들에게 나의 이름을 말했다. 항상 그들의 이름을 알고 싶었던 것은 아니다. 그래야 그들이 갈고리에 덜 걸리니까. 가끔씩... 그들을 도왔다. 나를 도와준 것처럼. 공포는 우리들의 공통분모였고. 우리는 유대감을 형성했다. 우린 아무도 없었다. 우리 중 이 희생제의 진실과 마주하고 상호작용한 인간 말이다. 
+            <br><br>
+            내 자신에게 스스로 혼자 있는게 나은지, 아니면 서로 함께하는게 나은지 물었다. 때때로 비명들로부터 숨었던 내 자신이 수치스러웠다. 하지만 난 공평하게 자주 다른 쪽에 있었을 때, 갈고리에 걸린 채로 두 발이 땅에서 떨어진 나를 관목숲에서 지켜보던 누군가를 보았다. 마치 목격자 같은. 아마 살펴보고나서, 이쯤 되니 자신에게 남은 고통만이 우리들의 삶을 짊어지는 짐이 아니라는 사실은 중요할지도 모른다. 하지만 우리들의 영혼도 마찬가지다. 우리들이 탈출할 수 있다면, 우린 살아갈 자격이 있을까?
+        </span>
+    </p>
+
+    <div class="gallery-container">
+        <img src="C:\Users\Vitamin-Lenovo\Desktop\UAN\허유안\web 2hakgi\uanheoeuan.github.io\euaniiiy.github.io\maegthomas.PNG" alt="Image 1" onclick="showImage('bbajo.png', '매그 토마스<br><br> 빠르고 조용하게:<br>게임을 플레이하면 살인마에게 도망칠 때 판자를 넘어트리거나 창틀을 넘으면 살인마가 볼 수 있는 시각적인 알람이 생긴다. 이 알림을 없애 주는 기술.')">
+        <img src="C:\Users\Vitamin-Lenovo\Desktop\UAN\허유안\web 2hakgi\uanheoeuan.github.io\euaniiiy.github.io\gabrielsoma.PNG" alt="Image 2" onclick="showImage('tanmok.png', '가브리엘 소마 <br><br> 탄생의 목적:<br>살인마에게 공격당하면 부상 상태에 빠지는데, 부상 상태에서의 속도가 3% 더 빨라진다.')">
+        <img src="C:\Users\Vitamin-Lenovo\Desktop\UAN\허유안\web 2hakgi\uanheoeuan.github.io\euaniiiy.github.io\mikaelareid.PNG" alt="Image 3" onclick="showImage('hoje.png', '미카엘라 레이드 <br> <br> 주술:호재:<br>공포 속에서 위안을 주는 호재. 맵 내에 있는 토템이라는 아이템과 상호작용하여 아군의 치유 속도를 기본 속도보다 100% 빠르게 만든다')">
+        <!-- 필요에 따라 더 많은 이미지를 추가하세요 -->
+    </div>
+
+    <div id="image-container">
+        <img id="displayed-image">
+        <div id="image-description"></div>
+    </div>
+
+    <div id="footer">
+        <p>It's euaniiiy's Web Publicng final page / my instagram: @imdbdks</p>
+    </div>
+
+    <script>
+        function showImage(imageName, description) {
+            var imageDescription = document.getElementById("image-description");
+            var displayedImage = document.getElementById("displayed-image");
+
+            imageDescription.innerHTML = description;
+            displayedImage.src = imageName;
+
+            imageDescription.style.display = "block";
+            displayedImage.style.display = "block";
+        }
+
+        function updateDateTimeWidget() {
+            var dateTimeWidget = document.getElementById("date-time-widget");
+            var now = new Date();
+            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+            var formattedDate = now.toLocaleDateString('ko-KR', options);
+            dateTimeWidget.innerText = formattedDate;
+        }
+
+        // Update date and time every second
+        setInterval(updateDateTimeWidget, 1000);
+
+        // Initial update
+        updateDateTimeWidget();
+    </script>
+</body>
+</html>

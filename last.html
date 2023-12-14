@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sub page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('mainbackground.png') center/cover no-repeat fixed;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            backdrop-filter: blur(5px);
+            display: flex; /* 추가된 부분: 가운데 정렬을 위해 flex 사용 */
+            justify-content: center; /* 추가된 부분: 가운데 정렬을 위해 flex 사용 */
+        }
+        body.loaded {
+            opacity: 1;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow-y: auto; 
+            padding-bottom: 60px;
+        }
+
+        .header-container {
+            background-color: rgb(177, 0, 0);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .header-content img {
+            width: 100%;
+            height: auto;
+            display: block; 
+            margin: 0 auto; 
+        }
+
+        video {
+            width: 100%;
+        }
+
+        h1, p {
+            text-align: center; 
+            margin-top: -20px;
+            margin-bottom: 20px;
+        }
+
+        h1.additional-text {
+            margin-top: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .image-container img {
+            width: 150px;
+            height: auto;
+            transition: filter 0.3s ease-in-out;
+        }
+
+        .image-container img:hover {
+            filter: blur(5px);
+        }
+
+        .image-overlay {
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: -5px;
+        }
+
+        .blue-background {
+            background-color: blue;
+            box-sizing: border-box;
+            margin-right: 10px; /* 변경된 부분: 간격 조절 */
+        }
+
+        .red-background {
+            background-color: red;
+            box-sizing: border-box;
+        }
+
+        .purple-background { /* 새로 추가된 부분: 보라색 배경 */
+            background-color: purple;
+            box-sizing: border-box;
+            margin-right: 10px; /* 변경된 부분: 간격 조절 */
+        }
+
+        header {
+            background-color: transparent;
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            z-index: 1;
+            color: white;
+            font-weight: bold;
+        }
+
+        .date-time {
+            margin-right: 20px;
+        }
+
+        h1 span.C {
+            color: red;
+        }
+        h1 span.H {
+            color: orange;
+        }
+        h1 span.U {
+            color: yellow;
+        }
+        h1 span.C2 {
+            color: green;
+        }
+        h1 span.K {
+            color: blue;
+        }
+        h1 span.Y {
+            color: purple;
+        }
+
+        p span.c {
+            color: red; 
+        }
+        p span.h {
+            color: orange;
+        }
+        p span.u {
+            color: yellow;
+        }
+        p span.c2 {
+            color: green;
+        }
+        p span.k {
+            color: blue;
+        }
+        p span.y {
+            color: purple;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="date-time" id="date-time"></div>
+    </header>
+
+    <div class="container">
+        <div class="header-container">
+            <div class="header-content">
+                <!-- 이미지를 a 태그로 감싸기 -->
+                <img src="chucky123.gif" alt="Chucky" />
+            </div>
+        </div>
+        
+        <h1 class="additional-text">
+            <span class="C">C</span>
+            <span class="H">H</span>
+            <span class="U">U</span>
+            <span class="C2">C</span>
+            <span class="K">K</span>
+            <span class="Y">Y</span>
+             is back for us!
+        </h1>
+        <p>
+            <span class="c">c</span>
+            <span class="h">h</span>
+            <span class="u">u</span>
+            <span class="c2">c</span>
+            <span class="k">k</span>
+            <span class="y">y</span>
+            가 우리에게 선물처럼 등장했습니다! 다가오는 크리스마스엔 착한아이가 있어야겠죠? <br> 인형은 우리의 친구가 될 수 있을 것입니다. 우리가 그의 심기를 건들지만 않는다면 말이죠!<br>자, 시간이 되었습니다. 이제는 사냥하거나, 탈출해야 할 때입니다.
+        </p>
+
+        <h2>
+            누구의 편이 되시겠습니까?
+        </h2>
+
+        <div class="image-container">
+            <div class="blue-background">
+                <div class="image-overlay">Survivor</div>
+                <!-- dwaid.png 이미지를 a 태그로 감싸기 -->
+                <a href="C:\Users\Vitamin-Lenovo\Desktop\UAN\허유안\web 2hakgi\uanheoeuan.github.io\euaniiiy.github.io\survivor.html" target="_blank">
+                    <img src="dwaid.png" alt="Dwight" />
+                </a>
+            </div>
+            <div class="red-background">
+                <div class="image-overlay">Killer</div>
+                <!-- trapper.png 이미지를 a 태그로 감싸기 -->
+                <a href="C:\Users\Vitamin-Lenovo\Desktop\UAN\허유안\web 2hakgi\uanheoeuan.github.io\euaniiiy.github.io\killer.html" target="_blank">
+                    <img src="trapper.png" alt="Trapper" />
+                </a>
+            </div>
+            <div class="purple-background"> <!-- 변경된 부분: 보라색 배경 추가 -->
+                <div class="image-overlay">Unknown</div>
+                <!-- overwatch.png 이미지를 a 태그로 감싸기 -->
+                <a href="sub.html" target="_blank">
+                    <img src="overwatch.PNG" alt="Unknown?" />
+                </a>
+            </div>
+        </div>    
+    </div> <!-- 추가된 부분: .container 요소 닫기 -->
+
+    <footer>
+        <p>© 2015-2023 and BEHAVIOUR, DEAD BY DAYLIGHT and other related trademarks and logos belong to Behaviour Interactive Inc. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function updateDateTime() {
+            const dateTimeElement = document.getElementById("date-time");
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+            const dateTimeString = now.toLocaleDateString('ko-KR', options);
+            dateTimeElement.textContent = dateTimeString;
+        }
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+
+        window.addEventListener('load', function () {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>

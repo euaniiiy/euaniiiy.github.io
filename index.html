@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Publicng </title>
+    <style>
+        body { 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'NewFont', sans-serif;
+            color: white;
+            background: url('dead-by-daylight-key-art.png') no-repeat center center fixed;
+            background-size: cover;
+            overflow: hidden; /* 페이지에서 스크롤을 막기 위해 추가 */
+        }
+
+        header {
+            background-color: black;
+            width: 100%;
+            height: 50px; /* 상단바 높이 조절 */
+            text-align: center;
+            position: fixed;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* 텍스트 중앙 정렬을 위해 수정 */
+            z-index: 1;
+        }
+
+        h1 {
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .date-time {
+            color: white;
+            font-weight: bold;
+        }
+
+        a.main-text {
+            text-decoration: none;
+            font-size: 80px;
+            font-weight: bold; 
+            margin-bottom: 20px;
+            display: block;
+            color: white;
+            transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, font-size 0.3s ease-in-out; /* 변경: 폰트 크기 변화에 대한 transition 추가 */
+        }
+
+        a.main-text:hover {
+            transform: scale(1.1);
+            color: #930000;
+            font-size: 85px; /* 변경: 마우스 호버 시 폰트 크기 증가 */
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 10px;
+            color: white;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* ... (이전 스타일 유지) ... */
+
+        /* 눈 내리는 애니메이션 스타일 */
+        .snowflake {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: white;
+            border-radius: 50%;
+            animation: falling 10s infinite, blur 3s infinite; /* 변경: 눈의 애니메이션 속도 감소 */
+            opacity: 0.5; /* 변경: 불투명도 설정 */
+        }
+
+        @keyframes falling {
+            from {
+                transform: translateY(-100vh);
+            }
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        @keyframes blur {
+            0% {
+                filter: blur(0px);
+            }
+            50% {
+                filter: blur(2px);
+            }
+            100% {
+                filter: blur(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="date-time" id="date-time"></div>
+    </header>
+    <div style="margin-top: 50px;">
+        <a href="C:\Users\Vitamin-Lenovo\Desktop\UAN\허유안\web 2hakgi\uanheoeuan.github.io\euaniiiy.github.io\last.html" class="main-text" onmouseover="changeText()" onmouseout="revertText()">Dead by Daylight</a>
+        <p id="changeableText">Do you want to escape?</p>
+    </div>
+
+    <script>
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.style.left = `${Math.random() * window.innerWidth}px`;
+            snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`; /* 변경: 애니메이션 속도 감소 */
+            document.body.appendChild(snowflake);
+        }
+
+        window.onload = function () {
+            for (let i = 0; i < 50; i++) {
+                createSnowflake();
+            }
+        };
+
+        function updateDateTime() {
+            const dateTimeElement = document.getElementById("date-time");
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+            const dateTimeString = now.toLocaleDateString('ko-KR', options);
+            dateTimeElement.textContent = dateTimeString;
+        }
+
+        function changeText() {
+            document.getElementById("changeableText").textContent = "Death is not escape";
+        }
+
+        function revertText() {
+            document.getElementById("changeableText").textContent = "Do you want to escape?";
+        }
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
